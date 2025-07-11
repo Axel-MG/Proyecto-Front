@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Table from "react-bootstrap/Table";
 
@@ -10,7 +10,9 @@ function PedidosCliente() {
 
   useEffect(() => {
     const obtenerPedidos = async () => {
-      const response = await fetch(`http://localhost:8080/api/pedidos/cliente/${id}`);
+      const response = await fetch(
+        `http://localhost:8080/api/pedido/pedidosCliente/${id}`
+      );
       const data = await response.json();
       setPedidos(data);
     };
@@ -19,7 +21,8 @@ function PedidosCliente() {
 
   return (
     <div className="container mt-5">
-      <h2>Pedidos del Cliente</h2>
+      <h1>Pedidos del Cliente</h1>
+
       <Table striped bordered hover>
         <thead>
           <tr>
@@ -36,7 +39,10 @@ function PedidosCliente() {
               <td>{pedido.fecha}</td>
               <td>${pedido.total.toFixed(2)}</td>
               <td>
-                <Button variant="info" onClick={() => navigate(`/detalle-pedido/${pedido.id}`)}>
+                <Button
+                  variant="info"
+                  onClick={() => navigate(`/detalle-pedido/${pedido.id}`)}
+                >
                   Ver Detalles
                 </Button>
               </td>

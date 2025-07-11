@@ -2,8 +2,6 @@ import Form from "react-bootstrap/form";
 import { useState } from "react";
 import ListarClientes from "./ListarClientes";
 
-
-
 function CrearCliente() {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
@@ -46,6 +44,8 @@ function CrearCliente() {
             type="text"
             placeholder="Ingrese el nombre del cliente"
             value={nombre}
+            minLength={3}
+            maxLength={35}
             onChange={(e) => setNombre(e.target.value)}
             required
           />
