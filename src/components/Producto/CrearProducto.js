@@ -16,7 +16,7 @@ function CrearProducto() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/api/producto", {
+      const response = await fetch("http://localhost:8080/api/productos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,17 +27,17 @@ function CrearProducto() {
       if (response.ok) {
         const data = await response.json();
         console.log("Producto creado:", data);
-        alert("✅ Producto creado exitosamente");
+        alert(" Producto creado exitosamente");
         setNombre("");
         setPrecio("");
         setStock("");
       } else {
         const error = await response.json();
-        alert("❌ Error al crear producto: " + (error.message || "verifica los datos"));
+        alert(" Error al crear producto: " + (error.message || "verifica los datos"));
       }
     } catch (error) {
       console.error("Error:", error);
-      alert("❌ Error en la conexión con el servidor");
+      alert("Error en la conexión con el servidor");
     }
   };
 
