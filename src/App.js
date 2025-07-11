@@ -2,6 +2,7 @@ import { Link, Route, Routes } from "react-router";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import CrearCliente from "./components/cliente/CrearCliente.js";
+import CrearProducto from "./components/Producto/CrearProducto.js";
 function App() {
   return (
     <div className="App">
@@ -16,6 +17,11 @@ function App() {
                 <Link className="nav-link" to="/crear-cliente">
                   Crear Cliente
                 </Link>
+                            <li className="nav-item">
+                <Link className="nav-link" to="/crear-producto">
+                  Crear Producto
+                </Link>
+              </li>
               </li>
             </ul>
           </div>
@@ -24,6 +30,8 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Bienvenido</h1>} />
         <Route path="/crear-cliente" element={<CrearCliente />} />
+        <Route path="/crear-producto" element={<CrearProducto />} />
+
       </Routes>
     </div>
   );
