@@ -1,11 +1,14 @@
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+
 function ListarClientes() {
   const [clientes, setClientes] = useState([]);
   const [error, setError] = useState(null);
   const [cargando, setCargando] = useState(true);
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -49,8 +52,13 @@ function ListarClientes() {
         <Modal.Body>
           <ul className="list-group">
             {clientes.map((cliente) => (
-              <li key={cliente.id} className="list-group-item">
-                {cliente.nombre} - {cliente.correo}
+              <li key={cliente.id} className="list-group-item d-flex justify-content-between align-items-center">
+                <div>
+                  {cliente.nombre} - {cliente.correo}
+                </div>
+                <Button variant="success" onClick={() => navigate(`/pedidos-cliente/${cliente.id}`)}>
+                  Ver Pedidos
+                </Button>
               </li>
             ))}
           </ul>
