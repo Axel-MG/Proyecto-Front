@@ -5,6 +5,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import CrearCliente from "./components/cliente/CrearCliente.js";
 import CrearProducto from "./components/Producto/CrearProducto.js";
+import ListarProductos from "./components/Producto/ListarProducto.js";
 import PedidosCliente from "./components/pedido/PedidosCliente.js";
 import DetallePedido from "./components/pedido/DetallePedido.js";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/crear-producto" element={<CrearProducto />} />
         <Route path="/pedidos-cliente/:id" element={<PedidosCliente />} />
         <Route path="/detalle-pedido/:id" element={<DetallePedido />} />
+        <Route path="/listar-productos" element={<ListarProductos />} />
       </Routes>
     </div>
   );
