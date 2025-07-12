@@ -16,7 +16,7 @@ function CrearProducto() {
     };
 
     try {
-      const response = await fetch("http://localhost:8080/api/productos", {
+      const response = await fetch("http://localhost:8080/api/producto", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

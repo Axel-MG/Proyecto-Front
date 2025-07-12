@@ -3,9 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import CrearCliente from "./components/cliente/CrearCliente.js";
 import CrearProducto from "./components/Producto/CrearProducto.js";
-
-
-
+sas
 function App() {
   return (
     <div className="App">
@@ -36,7 +34,6 @@ function App() {
       <Route path="/crear-cliente" element={<CrearCliente />} />
       <Route path="/crear-producto" element={<CrearProducto />} />
     </Routes>
-
 
     </div>
   );
