@@ -4,7 +4,8 @@ function ListarProductos() {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/producto")
+    fetch("http://localhost:8080/api/producto/lista")
+
       .then((res) => res.json())
       .then((data) => setProductos(data))
       .catch((err) => console.error("Error al obtener productos", err));
