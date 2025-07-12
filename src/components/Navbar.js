@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { ClienteContext } from "../context/ClienteContext";
 
@@ -21,6 +21,11 @@ const Navbar = () => {
             <li className="nav-item">
               <Link className="nav-link" to="/crear-producto">
                 Crear Producto
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/listar-productos">
+                Listar Productos
               </Link>
             </li>
           </ul>
