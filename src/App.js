@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router";
-import { Link } from "react-router-dom"; // necesario si usas <Link>
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Navbar from "./components/Navbar";
