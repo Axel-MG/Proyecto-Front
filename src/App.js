@@ -1,11 +1,12 @@
 import { Route, Routes } from "react-router";
-import { Link } from "react-router-dom"; // necesario si usas <Link>
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+
 import Navbar from "./components/Navbar";
 import CrearCliente from "./components/cliente/CrearCliente.js";
 import CrearProducto from "./components/Producto/CrearProducto.js";
 import ListarProductos from "./components/Producto/ListarProducto.js";
+import EditarProducto from "./components/Producto/EditarProducto.js";
 import PedidosCliente from "./components/pedido/PedidosCliente.js";
 import DetallePedido from "./components/pedido/DetallePedido.js";
 
@@ -18,6 +19,7 @@ function App() {
         <Route path="/" element={<h1>Bienvenido</h1>} />
         <Route path="/crear-cliente" element={<CrearCliente />} />
         <Route path="/crear-producto" element={<CrearProducto />} />
+        <Route path="/editar-producto/:id" element={<EditarProducto />} />
         <Route path="/pedidos-cliente/:id" element={<PedidosCliente />} />
         <Route path="/detalle-pedido/:id" element={<DetallePedido />} />
         <Route path="/listar-productos" element={<ListarProductos />} />
