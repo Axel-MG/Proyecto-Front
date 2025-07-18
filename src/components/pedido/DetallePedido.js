@@ -26,57 +26,117 @@ function DetallePedido() {
     return <div className="text-center mt-5">Cargando...</div>;
 
   return (
-    <div className="container mt-5 d-flex justify-content-center">
+    <div className="container my-5 d-flex justify-content-center">
       <div
-        className="ticket p-4 border rounded shadow-sm bg-white"
-        style={{ width: "380px" }}
+        className="ticket bg-white"
+        style={{
+          width: "300px",
+          padding: "20px",
+          fontFamily: "'Roboto Mono', monospace",
+          fontSize: "14px",
+          lineHeight: "1.4",
+          border: "1px solid #ccc",
+          boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+          whiteSpace: "pre-wrap",
+        }}
       >
-        <h4 className="text-center mb-3">TICKET DE COMPRA</h4>
-
-        <div className="mb-2">
-          <strong>Pedido ID:</strong> #{pedido.id}
-          <br />
-          <strong>Fecha:</strong> {pedido.fecha}
-          <br />
-          <strong>Cliente:</strong> {pedido.clienteNombre}
+        <div
+          style={{
+            textAlign: "center",
+            borderBottom: "1px dashed #000",
+            paddingBottom: "10px",
+            marginBottom: "10px",
+          }}
+        >
+          <img
+            src="/logo-empresa.png"
+            alt="Logo tienda"
+            className="img-fluid w-100 mb-2"
+          />
+          <strong style={{ fontSize: "16px" }}>TIENDA DE EJEMPLO</strong>
+          <div>RFC: XOXOXOXOXOXO</div>
+          <div>Dirección: Calle Fictizia 123, TECAMAYORK</div>
+          <div>Caja: 1</div>
+          <div>Folio: #</div>
+          <div>Fecha: {pedido.fecha}</div>
+          <div>Hora:</div>
+          <div>Atendió: {pedido.empleado}</div>
         </div>
 
-        <hr />
+        <div style={{ marginBottom: "10px" }}>
+          <strong>Pedido ID:</strong> #{pedido.id}
+          <br />
+          <strong>Cliente:</strong> {pedido.clienteNombre}
+          <br />
+          <strong>Tipo comprobante:</strong> Ticket
+        </div>
 
-        <div>
+        <div
+          style={{
+            borderTop: "1px dashed #000",
+            borderBottom: "1px dashed #000",
+            padding: "10px 0",
+          }}
+        >
           {pedido.productos.map((detalle, i) => (
-            <div
-              key={i}
-              className="d-flex justify-content-between border-bottom py-1"
-            >
-              <div>
-                <div style={{ fontWeight: "bold" }}>
-                  {detalle.productoNombre}
-                </div>
-                <div style={{ fontSize: "0.85rem" }}>
+            <div key={i} style={{ marginBottom: "8px" }}>
+              <div style={{ display: "flex", justifyContent: "space-between" }}>
+                <div>
+                  <strong>{detalle.productoNombre}</strong>
+                  <br />
+                  Código: {detalle.productoId}
+                  <br />
                   {detalle.cantidad} x ${detalle.productoPrecio.toFixed(2)}
                 </div>
-              </div>
-              <div className="text-end" style={{ fontWeight: "bold" }}>
-                ${detalle.subtotal.toFixed(2)}
+                <div style={{ textAlign: "right", fontWeight: "bold" }}>
+                  ${detalle.subtotal.toFixed(2)}
+                </div>
               </div>
             </div>
           ))}
         </div>
 
-        <hr />
-
-        <div className="d-flex justify-content-between mt-2">
-          <strong>Total:</strong>
-          <strong>${pedido.total.toFixed(2)}</strong>
+        <div style={{ marginTop: "15px" }}>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              fontWeight: "bold",
+              marginTop: "10px",
+            }}
+          >
+            <div>Total:</div>
+            <div>${pedido.total.toFixed(2)}</div>
+          </div>
         </div>
 
-        <p
-          className="text-center mt-3"
-          style={{ fontSize: "0.8rem", color: "#666" }}
+        <div
+          style={{
+            textAlign: "center",
+            borderTop: "1px dashed #000",
+            marginTop: "15px",
+            paddingTop: "10px",
+          }}
         >
-          ¡Gracias por su compra!
-        </p>
+          <div>¡GRACIAS POR SU COMPRA!</div>
+          <div>Vuelva pronto</div>
+          <div style={{ fontSize: "12px", marginTop: "5px" }}>
+            Visite: www.tienda.com
+            <br />
+            WhatsApp: 55-0000-0000
+            <br />
+            Instagram: @tienda_demo
+          </div>
+          <div
+            style={{
+              borderTop: "1px dashed #000",
+              borderBottom: "1px dashed #000",
+              padding: "10px 0",
+            }}
+          >
+            <div style={{ fontSize: "12px" }}>PRECIOS BAJOS TODOS LOS DIAS</div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ import ListarProductos from "./components/Producto/ListarProducto.js";
 import EditarProducto from "./components/Producto/EditarProducto.js";
 import PedidosCliente from "./components/pedido/PedidosCliente.js";
 import DetallePedido from "./components/pedido/DetallePedido.js";
+import EditarCliente from "./components/cliente/EditarCliente.js";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path="/" element={<h1>Bienvenido</h1>} />
         <Route path="/crear-cliente" element={<CrearCliente />} />
+        <Route path="/editar-cliente/:id" element={<EditarCliente />} />
         <Route path="/crear-producto" element={<CrearProducto />} />
         <Route path="/editar-producto/:id" element={<EditarProducto />} />
         <Route path="/pedidos-cliente/:id" element={<PedidosCliente />} />
