@@ -4,14 +4,17 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router";
 import { ClienteProvider } from "./context/ClienteContext";
+import { CarritoProvider } from "./context/CarritoContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   //<React.StrictMode>
   <ClienteProvider>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <CarritoProvider>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CarritoProvider>
   </ClienteProvider>
   //</React.StrictMode>
 );
